@@ -8,8 +8,21 @@
 
 #include <stdio.h>
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
+int main() {
+    int i, j, num[100];
+    for(i=0;i<10;i++) {
+        scanf("%d",&num[i]);
+    }
+    for(i=0;i<10;i++) {
+        for(j=i;j<10;j++) {
+            if(num[i]>num[j]) {
+                num[j]=num[i]+num[j];
+                num[i]=num[j]-num[i];
+                num[j]=num[j]-num[i];
+            }
+        }
+        printf("%d ",num[i]);
+    }
+    printf("\n");
     return 0;
 }
